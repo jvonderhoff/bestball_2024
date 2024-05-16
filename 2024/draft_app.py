@@ -27,7 +27,7 @@ def update_labels():
     # Update the labels with the selected values
     for i, values in enumerate(selected_values):
         if i < len(label_list):
-            formatted_data = f"{values[0]} {values[1]} {values[2]} {values[3]} {values[4]}"
+            formatted_data = f"{values[0]} {values[1]} {values[2]} {values[3]} {values[4]} {values[5]}"
             label_list[i].config(text=formatted_data)
 
     
@@ -64,13 +64,16 @@ def review_new_lineup():
     Lineup_ID = str(uuid.uuid4())
 
     final_lineup_data = []
+    draft_round = 1
     for values in selected_values:
         lineup_data = [
-            Lineup_ID, values[0], values[1], values[2], values[3], 
+            Lineup_ID, values[0], values[1], values[2], values[3], values[4], draft_round, 
             selected_contest_data[0], selected_contest_data[1], 
-            selected_contest_data[2], selected_contest_data[3], draft_date_display, draft_pick_display
+            selected_contest_data[2], selected_contest_data[3], draft_date_display, draft_pick_display 
         ]
         final_lineup_data.append(lineup_data)
+        draft_round += 1
+        logging.info("lineup_data data: %s", lineup_data)  # Log the value
 
 
     # Create a Treeview Scrollbar
@@ -83,36 +86,42 @@ def review_new_lineup():
 
 
     # Define the columns for the Treeview
-    lineup_treeview["columns"] = ("lineup_ID", "player_ID", "player_name", "player_team", "player_position",
-                        "contest_ID", "contest_name", "contest_fee", "contest_site", "draft_date", "draft_pick")
+    lineup_treeview["columns"] = ("lineup_ID", "player_ID", "player_name", "player_position","player_team", "player_wk17","draft_round",
+                        "contest_ID", "contest_name", "contest_entryFee", "contest_site", "draft_date", "draft_pick")
 
     # Format the columns
     lineup_treeview.column("#0", width=0, stretch=NO)
     lineup_treeview.column("lineup_ID", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("player_ID", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("player_name", width=100, minwidth=100, stretch=NO)
-    lineup_treeview.column("player_team", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("player_position", width=100, minwidth=100, stretch=NO)
+    lineup_treeview.column("player_team", width=100, minwidth=100, stretch=NO)
+    lineup_treeview.column("player_wk17", width=100, minwidth=100, stretch=NO)
+    lineup_treeview.column("draft_round", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("contest_ID", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("contest_name", width=100, minwidth=100, stretch=NO)
-    lineup_treeview.column("contest_fee", width=100, minwidth=100, stretch=NO)
+    lineup_treeview.column("contest_entryFee", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("contest_site", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("draft_date", width=100, minwidth=100, stretch=NO)
     lineup_treeview.column("draft_pick", width=100, minwidth=100, stretch=NO)
+    
 
     # Add column headings
     lineup_treeview.heading("#0", text="", anchor=W)
     lineup_treeview.heading("lineup_ID", text="lineup_ID", anchor=W)
     lineup_treeview.heading("player_ID", text="Player_ID", anchor=W)
     lineup_treeview.heading("player_name", text="player_name", anchor=W)
-    lineup_treeview.heading("player_team", text="player_team", anchor=W)
     lineup_treeview.heading("player_position", text="player_position", anchor=W)
+    lineup_treeview.heading("player_team", text="player_team", anchor=W)
+    lineup_treeview.heading("player_wk17", text="player_wk17", anchor=W)
+    lineup_treeview.heading("draft_round", text="draft_round", anchor=W)
     lineup_treeview.heading("contest_ID", text="contest_id", anchor=W)
     lineup_treeview.heading("contest_name", text="contest_name", anchor=W)
-    lineup_treeview.heading("contest_fee", text="contest_fee", anchor=W)
+    lineup_treeview.heading("contest_entryFee", text="contest_entryFee", anchor=W)
     lineup_treeview.heading("contest_site", text="contest_site", anchor=W)
     lineup_treeview.heading("draft_date", text="draft_date", anchor=W)
     lineup_treeview.heading("draft_pick", text="draft_pick", anchor=W)
+    
 
     # Insert data into the Treeview
     for data in final_lineup_data:
@@ -130,8 +139,9 @@ def submit_lineup(final_lineup_data):
     conn = sqlite3.connect('prod_bestball_2024.db')
     cursor = conn.cursor()
     
-    cursor.executemany('INSERT INTO lineups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', final_lineup_data)
+    cursor.executemany('INSERT INTO lineups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', final_lineup_data)
     
+
     # Commit the transaction
     conn.commit()
     
@@ -145,6 +155,86 @@ def check_focus():
     else:
         print("No widget currently has the focus.")
 
+def search_players():
+    lookup_name = name_search_entry.get()
+    lookup_team = team_search_entry.get()
+    
+
+    # Clear the Treeview
+    for record in my_tree.get_children():
+        my_tree.delete(record)
+
+    
+
+    # Search Players
+    # Connect to database
+    conn = sqlite3.connect('prod_bestball_2024.db')
+    cursor = conn.cursor()
+
+    global count
+    count = 0
+
+   # Search by name if lookup_name is not empty
+    if lookup_name:
+        cursor.execute("SELECT * FROM players WHERE Name LIKE ?", ('%' + lookup_name + '%', ))
+        search_name_records = cursor.fetchall()
+
+        for record in search_name_records:
+            if record[3] == "QB":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('qb',))
+            elif record[3] == "RB":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('rb',))
+            elif record[3] == "WR":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('WR',))
+            elif record[3] == "TE":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('TE',))
+            else:
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('rest',))
+            #increment counter
+            count += 1
+    elif lookup_team:
+        cursor.execute("SELECT * FROM players WHERE Team LIKE ?", ('%' + lookup_team + '%', ))
+        search_team_records = cursor.fetchall()
+
+        for record in search_team_records:
+            if record[3] == "QB":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('qb',))
+            elif record[3] == "RB":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('rb',))
+            elif record[3] == "WR":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('WR',))
+            elif record[3] == "TE":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('TE',))
+            else:
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('rest',))
+            #increment counter
+            count += 1
+    else:
+        lookup_name = ''
+        cursor.execute("SELECT * FROM players WHERE Team LIKE ?", ('%' + lookup_team + '%', ))
+        search_team_records = cursor.fetchall()
+
+        for record in search_team_records:
+            if record[3] == "QB":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('qb',))
+            elif record[3] == "RB":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('rb',))
+            elif record[3] == "WR":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('WR',))
+            elif record[3] == "TE":
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('TE',))
+            else:
+                my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5]), tags=('rest',))
+            #increment counter
+            count += 1
+
+
+    # Commit the transaction
+    conn.commit()
+        
+    # Close the database connection
+    conn.close()
+    
 
 # Create the main window
 root = Tk()
@@ -157,7 +247,7 @@ conn = sqlite3.connect('prod_bestball_2024.db')
 cursor = conn.cursor()
 
 # Get data from players table
-cursor.execute("SELECT rowid, * FROM players")
+cursor.execute("SELECT * FROM players")
 player_data = cursor.fetchall()
 
 # Get contests from contests
@@ -165,6 +255,12 @@ cursor.execute("SELECT rowid, * FROM contests")
 contest_data = cursor.fetchall()
 contest_names = [row[1] for row in contest_data]
 logging.info("contest_names data: %s", contest_names)  # Log the value
+
+ # Commit the transaction
+conn.commit()
+    
+# Close the database connection
+conn.close()
 
 contest_frame = Frame(root)
 contest_frame.pack(pady=10)
@@ -195,10 +291,25 @@ draft_pick_label.pack(padx=10, pady=5, side="left")
 draft_pick = Entry(contest_frame, width=10)
 draft_pick.pack(padx=10, pady=10, side="left")
 
-
 # set focuus
 contest_optionmenu.focus_set()
 
+# Create LabelFrame for search
+search_frame = LabelFrame(root, text="Search")
+search_frame.pack(padx=10, pady=10)
+
+# Add player name search entry box
+name_search_entry = Entry(search_frame)
+name_search_entry.pack(padx=20, pady=20)
+
+
+# Add player name search entry box
+team_search_entry = Entry(search_frame)
+team_search_entry.pack(padx=20, pady=20)
+
+# Add search button
+search_button = Button(search_frame, text="Search Players", command=search_players)
+search_button.pack(padx=20, pady=20)
 
 # Add some Style
 style = ttk.Style()
@@ -234,23 +345,27 @@ my_tree.pack()
 tree_scroll.config(command=my_tree.yview)
 
 # Define Our Columns
-my_tree['columns'] = ("ID", "Player Name", "Team", "Position","Dk Rank")
+my_tree['columns'] = ("ID", "Player Name", "Position", "Team", "wk17","Dk Rank", "Dk ADP")
 
 # Format Our Columns
 my_tree.column("#0", width=0, stretch=NO)
-my_tree.column("ID", anchor=W, width=50)
-my_tree.column("Player Name", anchor=W, width=240)
-my_tree.column("Team", anchor=W, width=140)
-my_tree.column("Position", anchor=W, width=140)
-my_tree.column("Dk Rank", anchor=W, width=140)
+my_tree.column("ID", anchor=W, width=100)
+my_tree.column("Player Name", anchor=W, width=200)
+my_tree.column("Position", anchor=W, width=70)
+my_tree.column("Team", anchor=W, width=70)
+my_tree.column("wk17", anchor=W, width=70)
+my_tree.column("Dk Rank", anchor=W, width=70)
+my_tree.column("Dk ADP", anchor=W, width=70)
 
 # Create Headings
 my_tree.heading("#0", text="", anchor=W)
 my_tree.heading("ID", text="ID", anchor=W)
 my_tree.heading("Player Name", text="Player Name", anchor=W)
-my_tree.heading("Team", text="Team", anchor=W)
 my_tree.heading("Position", text="Position", anchor=W)
+my_tree.heading("Team", text="Team", anchor=W)
+my_tree.heading("wk17", text="wk17", anchor=W)
 my_tree.heading("Dk Rank", text="Dk Rank", anchor=W)
+my_tree.heading("Dk ADP", text="Dk ADP", anchor=W)
 
 
 # Create Striped Row Tags
@@ -265,16 +380,16 @@ global count
 count = 0
 
 for record in player_data:
-    if record[3] == "QB":
-        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4]), tags=('qb',))
-    elif record[3] == "RB":
-        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4]), tags=('rb',))
-    elif record[3] == "WR":
-        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4]), tags=('WR',))
-    elif record[3] == "TE":
-        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4]), tags=('TE',))
+    if record[2] == "QB":
+        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5], record[6]), tags=('qb',))
+    elif record[2] == "RB":
+        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5], record[6]), tags=('rb',))
+    elif record[2] == "WR":
+        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5], record[6]), tags=('WR',))
+    elif record[2] == "TE":
+        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5], record[6]), tags=('TE',))
     else:
-        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4]), tags=('rest',))
+        my_tree.insert(parent='', index='end', iid=count, text='', values=(record[0],record[1],record[2],record[3],record[4],record[5], record[6]), tags=('rest',))
     #increment counter
     count += 1
 
@@ -286,7 +401,7 @@ data_frame.pack(fill="x", expand="yes", padx=20)
 
 
 contest_data_label = Label(data_frame, text="") 
-contest_data_label.grid()
+contest_data_label.pack()
 
 
 selected_contest.trace('w', on_contest_select)
@@ -297,7 +412,7 @@ selected_contest.trace('w', on_contest_select)
 label_list = []
 for _ in range(20):
     label = Label(data_frame, text="")
-    label.grid()
+    label.pack(side="top")
     label_list.append(label)
 
 
