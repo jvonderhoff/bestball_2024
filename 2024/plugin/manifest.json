@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Underdog Fantasy Data Puller",
+  "version": "1.0",
+  "description": "Pulls data from Underdog Fantasy API",
+  "permissions": [
+    "https://api.underdogfantasy.com/*", "downloads"
+  ],
+  "background": {
+    "scripts": ["content.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
