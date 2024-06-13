@@ -1,137 +1,137 @@
-import tkinter as tk
+from tkinter import *
 from tkinter import ttk
 import sqlite3
+import uuid
+import logging
+from tkinter import messagebox
 
-selected_values = []
 
-def on_double_click(event):
-    item = tree.item(tree.focus())  # Get the item that was double-clicked
-    values = item['values']  # Get the values of the item
-    selected_values.append(values)  # Append the values to the selected_values list
-    update_labels()  # Update the labels with the selected values
-    
-    # Remove the selected item from the Treeview
-    tree.delete(tree.focus())
+# Configure logging
+logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='w',
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
-def clear_selected_values():
-    global selected_values
-    
-    # Remove the selected values from the Treeview
-    for values in selected_values:
-        item = tree.insert("", tk.END, values=values)
-        tree.selection_add(item)
-    
-    selected_values = []  # Clear the selected_values list
-    update_labels()  # Update the labels
-    
-    # Fetch data from the SQLite database
-    cursor.execute("SELECT * FROM players")
-    data = cursor.fetchall()
-    
-    # Clear the existing items from the Treeview
-    tree.delete(*tree.get_children())
-    
-    # Insert new data into the Treeview
-    for row in data:
-        tree.insert("", tk.END, values=row)
 
-def update_labels():
-    # Clear the previous labels
-    for label in label_list:
-        label.config(text="")
-    
-    # Update the labels with the selected values
-    for i, values in enumerate(selected_values):
-        if i < len(label_list):
-            label_list[i].config(text=values)
+def select_row(event):
+    selected_item = my_tree.focus()
+    # Retrieve the values of the selected row
+    values = my_tree.item(selected_item, 'values')
+    if values:
+        print("Selected row:", values)
+
 
 # Create the main window
-root = tk.Tk()
-root.title("Best Ball App")
-root.geometry("1200x800")
+root = Tk()
+root.title("Lineups")
+root.geometry("1500x1000")
 
+
+# Connect to database
 conn = sqlite3.connect('prod_bestball_2024.db')
 cursor = conn.cursor()
 
+# Get data from players table
 cursor.execute("SELECT * FROM players")
-data = cursor.fetchall()
+player_data = cursor.fetchall()
+
+
+ # Commit the transaction
+conn.commit()
+    
+# Close the database connection
+conn.close()
+
+
+# Add some Style
+style = ttk.Style()
+
+# Pick A Theme
+style.theme_use('default')
+
+# Configure the Treeview Colors
+style.configure('Treeview',
+                backgroud="#D3D3D3",
+                foreground="black",
+                rowheight=100,
+                fieldbackgroud="#D3D3D3")
+
+# Change Selected Color
+style.map('Treeview',
+          background=[('selected', "#347083")])
+
+# Create a Treeview Scrollbar
+tree_frame = Frame(root)
+tree_frame.grid(pady=10, row=5, column=1)
+
+# Create a Treeview Scrollbar
+tree_scroll = Scrollbar(root)
+tree_scroll.grid(row=0, column=1, sticky="ns")
+
+# Create The Treeview
+my_tree = ttk.Treeview(root, yscrollcommand=tree_scroll.set, selectmode=BROWSE)
+my_tree.grid(row=0, column=0, sticky="nsew")
+
+tree_scroll.config(command=my_tree.yview)
+
+# Define Our Columns
+my_tree['columns'] = ("ID", "Player Name", "Position", "Team", "wk17","Dk Rank", "Dk ADP")
+
+# Format Our Columns
+my_tree.column("#0", width=0, stretch=NO)
+my_tree.column("ID", anchor=W, width=100)
+my_tree.column("Player Name", anchor=W, width=200)
+my_tree.column("Position", anchor=W, width=70)
+my_tree.column("Team", anchor=W, width=70)
+my_tree.column("wk17", anchor=W, width=70)
+my_tree.column("Dk Rank", anchor=W, width=70)
+my_tree.column("Dk ADP", anchor=W, width=70)
+
+# Create Headings
+my_tree.heading("#0", text="", anchor=W)
+my_tree.heading("ID", text="ID", anchor=W)
+my_tree.heading("Player Name", text="Player Name", anchor=W)
+my_tree.heading("Position", text="Position", anchor=W)
+my_tree.heading("Team", text="Team", anchor=W)
+my_tree.heading("wk17", text="wk17", anchor=W)
+my_tree.heading("Dk Rank", text="Dk Rank", anchor=W)
+my_tree.heading("Dk ADP", text="Dk ADP", anchor=W)
+
+
+# Create Striped Row Tags
+my_tree.tag_configure('rest', background="White")
+my_tree.tag_configure('qb', background="orange")
+my_tree.tag_configure('rb', background="lightblue")
+my_tree.tag_configure('WR', background="lightgreen")
+my_tree.tag_configure('TE', background="lightyellow")
+
+# Add our data to the screen
+global count
+count = 0
+
+tag_mapping = {
+    "QB": "qb",
+    "RB": "rb",
+    "WR": "WR",
+    "TE": "TE",
+}
+
+data = []
+for record in player_data:
+    tag = tag_mapping.get(record[2], "rest")
+    values = (record[0], record[1], record[2], record[3], record[4], record[5], record[6])
+    data.append((count, values, tag))
+    count += 1
+    logging.info("record: %s", record)
+
+# Insert the data into the Treeview widget
+for item in data:
+    my_tree.insert(parent='', index='end', iid=item[0], text='', values=item[1], tags=(item[2],))
+
+
+# Bind the row selection event to the Treeview widget
+my_tree.bind("<<TreeviewSelect>>", select_row)
 
 
 
-
-# Create a Treeview widget
-tree = ttk.Treeview(root, selectmode="extended")  # Allow selecting multiple items
-tree["columns"] = tuple(range(len(data[0])))  # Assuming each row has the same number of columns
-
-column_names = [column[0] for column in cursor.description]
-
-# Set the column names as Treeview headings
-tree["show"] = "headings"
-for i, column_name in enumerate(column_names):
-    tree.heading(i, text=column_name)
-
-# Insert data into the Treeview
-for row in data:
-    tree.insert("", tk.END, values=row)
-
-# Add a scrollbar to the Treeview
-scrollbar = ttk.Scrollbar(root, orient="vertical", command=tree.yview)
-tree.configure(yscrollcommand=scrollbar.set)
-
-# Pack the Treeview and scrollbar
-tree.pack(side="left", fill="both", expand=True)
-scrollbar.pack(side="right", fill="y")
-
-# Create labels to display the selected values
-label_list = []
-for _ in range(20):
-    label = tk.Label(root, text="")
-    label.pack()
-    label_list.append(label)
-
-# Create a button to clear the selected values
-clear_button = tk.Button(root, text="Clear", command=clear_selected_values)
-clear_button.pack()
-
-# Set focus to the Treeview widget
-tree.focus_set()
-
-# Bind double-click event to the Treeview
-tree.bind("<Double-1>", on_double_click)
-
-# Adjust double-click timing
-root.tk.call('after', 'idle', 'tk::mac::SetupDoubleButtonTime', 500)
-
-
-cursor.execute("SELECT * FROM contests")
-contest_data = cursor.fetchall()
-
-# Create the Treeview for contests
-contest_tree = ttk.Treeview(root, selectmode="extended")
-contest_tree["columns"] = tuple(range(len(contest_data[0])))
-
-column_names = [column[0] for column in cursor.description]
-
-# Set the column names as Treeview headings for contests
-contest_tree["show"] = "headings"
-for i, column_name in enumerate(column_names):
-    contest_tree.heading(i, text=column_name)
-
-# Insert data into the contest Treeview
-for row in contest_data:
-    contest_tree.insert("", tk.END, values=row)
-
-# Add a scrollbar to the contest Treeview
-contest_scrollbar = ttk.Scrollbar(root, orient="vertical", command=contest_tree.yview)
-contest_tree.configure(yscrollcommand=contest_scrollbar.set)
-
-# Pack the contest Treeview and scrollbar
-contest_tree.pack(side="left", fill="both", expand=True)
-contest_scrollbar.pack(side="right", fill="y")
-
-# Reposition and resize the players Treeview
-tree.pack(side="left", fill="both", expand=True)
-scrollbar.pack(side="right", fill="y")
 
 
 # Run the main event loop

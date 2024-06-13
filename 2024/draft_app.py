@@ -3,17 +3,36 @@ from tkinter import ttk
 import sqlite3
 import uuid
 import logging
+from tkinter import messagebox
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='w',
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 selected_values = []
+count_teams = {}
+count_wk_17_opponents = {}
 # double click function
 def on_double_click(event):
     item = my_tree.item(my_tree.focus())  # Get the item that was double-clicked
     values = item['values']  # Get the values of the item
     selected_values.append(values)  # Append the values to the selected_values list
+    
+    # Count occurrences of teams (values[3])
+    if values[3] in count_teams:
+        count_teams[values[3]] += 1
+    else:
+        count_teams[values[3]] = 1
+    
+    if values[3] in count_wk_17_opponents:
+        count_wk_17_opponents[values[4]] = count_teams.get(values[4], 0)
+    else:
+        count_wk_17_opponents[values[4]] = 0
+
+    '''
+    # Count occurrences of weak 17 opponents (values[4])
+    count_wk_17_opponents[values[4]] = count_teams.get(values[4], 0)
+    '''
     update_labels()  # Update the labels with the selected values
 
     # Remove the selected item from the Treeview
@@ -29,7 +48,30 @@ def update_labels():
         if i < len(label_list):
             formatted_data = f"{values[0]} {values[1]} {values[2]} {values[3]} {values[4]} {values[5]}"
             label_list[i].config(text=formatted_data)
+    
+    # Clear the previous count labels
+    for label in count_label_teams_list:
+        label.config(text="")
+    
+    for label in count_label_weak_17_opponents_list:
+        label.config(text="")
 
+    # Update count_wk_17_opponents based on matching count_teams
+    for opponent, count in count_wk_17_opponents.items():
+        if opponent in count_teams:
+            count_wk_17_opponents[opponent] = count_teams[opponent]
+    
+    # Display count for teams
+    for i, (team, count) in enumerate(count_teams.items()):
+        if i < len(count_label_teams_list):
+            count_label_teams_list[i].config(text=f"{team}: {count}")
+    
+    # Display count for week 17 opponents
+    for i, (opponent, count) in enumerate(count_wk_17_opponents.items()):
+        if i < len(count_label_weak_17_opponents_list):
+            count_label_weak_17_opponents_list[i].config(text=f"{opponent}: {count}")
+    logging.info("count_teams data: %s", count_teams)  # Log the value 
+    logging.info("count_wk_17_opponents data: %s", count_wk_17_opponents)  # Log the value     
     
     
 contest_columns = ['Contest ID', 'Contest Name', 'Entry Fee', 'Site']  # Replace with your actual column names
@@ -69,11 +111,11 @@ def review_new_lineup():
         lineup_data = [
             Lineup_ID, values[0], values[1], values[2], values[3], values[4], draft_round, 
             selected_contest_data[0], selected_contest_data[1], 
-            selected_contest_data[2], selected_contest_data[3], draft_date_display, draft_pick_display 
+            selected_contest_data[2], selected_contest_data[3], draft_date_display, draft_pick_display, 0 
         ]
         final_lineup_data.append(lineup_data)
         draft_round += 1
-        logging.info("lineup_data data: %s", lineup_data)  # Log the value
+        
 
 
     # Create a Treeview Scrollbar
@@ -139,7 +181,7 @@ def submit_lineup(final_lineup_data):
     conn = sqlite3.connect('prod_bestball_2024.db')
     cursor = conn.cursor()
     
-    cursor.executemany('INSERT INTO lineups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', final_lineup_data)
+    cursor.executemany('INSERT INTO lineups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)', final_lineup_data)
     
 
     # Commit the transaction
@@ -147,6 +189,9 @@ def submit_lineup(final_lineup_data):
     
     # Close the database connection
     conn.close()
+
+    # Show confirmation message box
+    messagebox.showinfo("Confirmation", "Data saved successfully!")
 
 def check_focus():
     focused_widget = root.focus_get()
@@ -254,7 +299,7 @@ player_data = cursor.fetchall()
 cursor.execute("SELECT rowid, * FROM contests")
 contest_data = cursor.fetchall()
 contest_names = [row[1] for row in contest_data]
-logging.info("contest_names data: %s", contest_names)  # Log the value
+
 
  # Commit the transaction
 conn.commit()
@@ -396,24 +441,38 @@ for record in player_data:
 
 
 # Add Selection area
-data_frame = LabelFrame(root, text="Lineup")
-data_frame.pack(fill="x", expand="yes", padx=20)
+lineup_data_frame = LabelFrame(root, text="Lineup")
+lineup_data_frame.pack(padx=20, side="left")
+team_stack_data_frame = LabelFrame(root, text="Teaam Stack")
+team_stack_data_frame.pack(padx=20, side="right")
 
 
-contest_data_label = Label(data_frame, text="") 
+contest_data_label = Label(lineup_data_frame, text="") 
 contest_data_label.pack()
 
 
 selected_contest.trace('w', on_contest_select)
 
+teams_header_label = Label(team_stack_data_frame, text="Team")
+teams_header_label.grid(row=0, column=0)
 
+wk17_header_label = Label(team_stack_data_frame, text="Week 17")
+wk17_header_label.grid(row=0, column=1)
 
 # Create labels to display the selected values
 label_list = []
+count_label_teams_list = []
+count_label_weak_17_opponents_list = []
 for _ in range(20):
-    label = Label(data_frame, text="")
+    label = Label(lineup_data_frame, text="")
     label.pack(side="top")
     label_list.append(label)
+    count_label_teams = Label(team_stack_data_frame, text="")
+    count_label_teams.grid(row=_+1, column=0)
+    count_label_teams_list.append(count_label_teams)
+    count_label_wk17 = Label(team_stack_data_frame, text="")
+    count_label_wk17.grid(row=_+1, column=1)
+    count_label_weak_17_opponents_list.append(count_label_wk17)
 
 
 
