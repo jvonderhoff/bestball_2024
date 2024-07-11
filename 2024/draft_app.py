@@ -18,6 +18,7 @@ def on_double_click(event):
     values = item['values']  # Get the values of the item
     selected_values.append(values)  # Append the values to the selected_values list
     
+    
     # Count occurrences of teams (values[3])
     if values[3] in count_teams:
         count_teams[values[3]] += 1
@@ -29,10 +30,6 @@ def on_double_click(event):
     else:
         count_wk_17_opponents[values[4]] = 0
 
-    '''
-    # Count occurrences of weak 17 opponents (values[4])
-    count_wk_17_opponents[values[4]] = count_teams.get(values[4], 0)
-    '''
     update_labels()  # Update the labels with the selected values
 
     # Remove the selected item from the Treeview
@@ -42,13 +39,62 @@ def update_labels():
     # Clear the previous labels
     for label in label_list:
         label.config(text="")
-    
+    # Clear previous data from the Treeview
+    players_treeview.delete(*players_treeview.get_children())
+    # Clear previous data from the Treeview
+    team_players_treeview.delete(*team_players_treeview.get_children())
+
     # Update the labels with the selected values
     for i, values in enumerate(selected_values):
         if i < len(label_list):
             formatted_data = f"{values[0]} {values[1]} {values[2]} {values[3]} {values[4]} {values[5]}"
             label_list[i].config(text=formatted_data)
-    
+
+        # Retrieve team if position is QB
+        if values[2] == "QB":
+            team = values[3] 
+            # Perform SQL query to retrieve all players for the team
+            conn = sqlite3.connect("prod_bestball_2024.db")  # Replace with your database file
+            cursor = conn.cursor()
+            query = f"SELECT Rank, Position, Name FROM Players WHERE Team = ? AND Position != 'QB' ORDER BY Rank"
+            cursor.execute(query, (team,))
+            players = cursor.fetchall()
+
+            # Insert player data into the Treeview
+            for player in players:
+                players_treeview.insert("", "end", values=player)
+            
+            
+                    
+            cursor.close()  
+            conn.close()
+
+        if values[2] != "QB":
+            team_values = values[3]
+            # Perform SQL query to retrieve all players for the team(s)
+ 
+            conn = sqlite3.connect("prod_bestball_2024.db")  # Replace with your database file
+            cursor = conn.cursor()
+            query = "SELECT Rank, Position, Name FROM Players WHERE Team = ?"
+
+            # Execute the query with the combined team values
+            cursor.execute(query, (team_values,))
+
+            team_players = cursor.fetchall()
+
+            # Close the cursor and connection
+            cursor.close()
+            conn.close()
+
+            # Display the retrieved player information
+            for team_player in team_players:
+                team_players_treeview.insert("", "end", values=team_player)
+
+            logging.info("team_values data: %s", team_values)  # Log the value 
+            logging.info("values data: %s", values)  # Log the value 
+            logging.info("count_teams data: %s", count_teams)  # Log the value 
+
+
     # Clear the previous count labels
     for label in count_label_teams_list:
         label.config(text="")
@@ -70,9 +116,11 @@ def update_labels():
     for i, (opponent, count) in enumerate(count_wk_17_opponents.items()):
         if i < len(count_label_weak_17_opponents_list):
             count_label_weak_17_opponents_list[i].config(text=f"{opponent}: {count}")
-    logging.info("count_teams data: %s", count_teams)  # Log the value 
-    logging.info("count_wk_17_opponents data: %s", count_wk_17_opponents)  # Log the value     
+
+    # Get QB Teams
+
     
+ 
     
 contest_columns = ['Contest ID', 'Contest Name', 'Entry Fee', 'Site']  # Replace with your actual column names
 def on_contest_select(*args):
@@ -116,7 +164,6 @@ def review_new_lineup():
         final_lineup_data.append(lineup_data)
         draft_round += 1
         
-
 
     # Create a Treeview Scrollbar
     tree_scroll = Scrollbar(tree_frame)
@@ -175,7 +222,22 @@ def review_new_lineup():
     # Pack the button widget
     submit_button.pack(pady=10)
 
-    
+def sort_treeview(treeview, column, reverse=False):
+    """
+    Function to sort the data in a Treeview widget by a specific column.
+    """
+    data = [(treeview.set(child, column), child) for child in treeview.get_children('')]
+
+    # Handle sorting based on different column data types
+    if column == "rank":
+        data.sort(key=lambda x: int(x[0]), reverse=reverse)
+    elif column == "position":
+        data.sort(key=lambda x: str(x[0]), reverse=reverse)
+
+    for index, (value, child) in enumerate(data):
+        treeview.move(child, '', index)
+
+    treeview.heading(column, command=lambda: sort_treeview(treeview, column, not reverse))
 
 def submit_lineup(final_lineup_data):
     conn = sqlite3.connect('prod_bestball_2024.db')
@@ -341,20 +403,20 @@ contest_optionmenu.focus_set()
 
 # Create LabelFrame for search
 search_frame = LabelFrame(root, text="Search")
-search_frame.pack(padx=10, pady=10)
+search_frame.pack(padx=10, pady=10, side="right")
 
 # Add player name search entry box
 name_search_entry = Entry(search_frame)
-name_search_entry.pack(padx=20, pady=20)
+name_search_entry.pack(padx=10, pady=10)
 
 
 # Add player name search entry box
 team_search_entry = Entry(search_frame)
-team_search_entry.pack(padx=20, pady=20)
+team_search_entry.pack(padx=10, pady=10)
 
 # Add search button
 search_button = Button(search_frame, text="Search Players", command=search_players)
-search_button.pack(padx=20, pady=20)
+search_button.pack(padx=10, pady=10)
 
 # Add some Style
 style = ttk.Style()
@@ -441,14 +503,9 @@ for record in player_data:
 
 
 # Add Selection area
-lineup_data_frame = LabelFrame(root, text="Lineup")
-lineup_data_frame.pack(padx=20, side="left")
-team_stack_data_frame = LabelFrame(root, text="Teaam Stack")
-team_stack_data_frame.pack(padx=20, side="right")
+team_stack_data_frame = LabelFrame(root, text="Team Stack")
+team_stack_data_frame.pack(padx=10, side="left")
 
-
-contest_data_label = Label(lineup_data_frame, text="") 
-contest_data_label.pack()
 
 
 selected_contest.trace('w', on_contest_select)
@@ -464,15 +521,18 @@ label_list = []
 count_label_teams_list = []
 count_label_weak_17_opponents_list = []
 for _ in range(20):
-    label = Label(lineup_data_frame, text="")
-    label.pack(side="top")
-    label_list.append(label)
     count_label_teams = Label(team_stack_data_frame, text="")
     count_label_teams.grid(row=_+1, column=0)
     count_label_teams_list.append(count_label_teams)
     count_label_wk17 = Label(team_stack_data_frame, text="")
     count_label_wk17.grid(row=_+1, column=1)
     count_label_weak_17_opponents_list.append(count_label_wk17)
+    if label_list:
+        Position = label_list[-1].cget("text")
+        if Position == "QB":
+            # Get the team value and do something with it
+            team = label_list[-3].cget("text")
+            print("Team:", team)
 
 
 
@@ -485,14 +545,42 @@ button.pack(pady=10)
 my_tree.bind("<Double-1>", on_double_click)
 
 
+# Create a Treeview widget to display drafted players
+team_players_treeview = ttk.Treeview(root)
+team_players_treeview["columns"] = ("rank", "position", "name")
+team_players_treeview.heading("#0", text="", anchor="w")
+team_players_treeview.heading("rank", text="Rank", command=lambda: sort_treeview(team_players_treeview, "rank"))
+team_players_treeview.heading("position", text="Position", command=lambda: sort_treeview(team_players_treeview, "position"))
+team_players_treeview.heading("name", text="Name", command=lambda: sort_treeview(team_players_treeview, "name"))
 
-button = Button(root, text="Check Focus")
 
-button.config(command=check_focus)
+# Adjust the column widths
+team_players_treeview.column("#0", width=0, stretch="no")
+team_players_treeview.column("rank", width=50, anchor="center", stretch=False)
+team_players_treeview.column("position", width=50, anchor="center", stretch=False)
+team_players_treeview.column("name", width=150)
 
-button.pack()
+team_players_treeview.pack(side="left", padx=20, pady=20)
 
 
+# Create the Treeview widget
+players_treeview = ttk.Treeview(root)
+players_treeview["columns"] = ("rank", "position", "name")
+players_treeview.heading("#0", text="", anchor="w")
+players_treeview.heading("rank", text="Rank", command=lambda: sort_treeview(players_treeview, "rank"))
+players_treeview.heading("position", text="Position", command=lambda: sort_treeview(players_treeview, "position"))
+players_treeview.heading("name", text="Name", command=lambda: sort_treeview(players_treeview, "name"))
+
+# Adjust the column widths
+players_treeview.column("#0", width=0, stretch="no")
+players_treeview.column("rank", width=50, anchor="center", stretch=False)
+players_treeview.column("position", width=50, anchor="center", stretch=False)
+players_treeview.column("name", width=150)
+
+players_treeview.pack(side="left", padx=20, pady=20)
+
+# Call the update_labels function to update the players display
+update_labels()
 
 # Run the main event loop
 root.mainloop()

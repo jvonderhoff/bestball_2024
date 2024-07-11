@@ -1,0 +1,21 @@
+2024-07-11 12:56:16,595 - INFO - team_values data: MIN
+2024-07-11 12:56:16,595 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
+2024-07-11 12:56:16,596 - INFO - count_teams data: {'MIN': 1}
+2024-07-11 12:56:20,445 - INFO - team_values data: MIN
+2024-07-11 12:56:20,446 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
+2024-07-11 12:56:20,446 - INFO - count_teams data: {'MIN': 1, 'LA': 1}
+2024-07-11 12:56:20,447 - INFO - team_values data: LA
+2024-07-11 12:56:20,447 - INFO - values data: [1162128, 'Puka Nacua', 'WR', 'LA', 'ARI', 9, '9.1']
+2024-07-11 12:56:20,447 - INFO - count_teams data: {'MIN': 1, 'LA': 1}
+2024-07-11 12:56:22,079 - INFO - team_values data: MIN
+2024-07-11 12:56:22,079 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
+2024-07-11 12:56:22,079 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1}
+2024-07-11 12:56:22,080 - INFO - team_values data: LA
+2024-07-11 12:56:22,080 - INFO - values data: [1162128, 'Puka Nacua', 'WR', 'LA', 'ARI', 9, '9.1']
+2024-07-11 12:56:22,081 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1}
+2024-07-11 12:56:28,698 - INFO - team_values data: MIN
+2024-07-11 12:56:28,699 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
+2024-07-11 12:56:28,699 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1, 'IND': 1}
+2024-07-11 12:56:28,700 - INFO - team_values data: LA
+2024-07-11 12:56:28,700 - INFO - values data: [1162128, 'Puka Nacua', 'WR', 'LA', 'ARI', 9, '9.1']
+2024-07-11 12:56:28,700 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1, 'IND': 1}
