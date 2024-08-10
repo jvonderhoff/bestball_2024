@@ -131,8 +131,6 @@ def on_contest_select(*args):
     formatted_data = "\n".join(f"{key}: {value}" for key, value in zip(contest_columns, selected_contest_data))
     
 
-    # Update the label with the contest data
-    contest_data_label.config(text=formatted_data)
 
 def review_new_lineup():
     # Create New Window
@@ -243,7 +241,7 @@ def submit_lineup(final_lineup_data):
     conn = sqlite3.connect('prod_bestball_2024.db')
     cursor = conn.cursor()
     
-    cursor.executemany('INSERT INTO lineups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)', final_lineup_data)
+    cursor.executemany('INSERT INTO DK_lineups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)', final_lineup_data)
     
 
     # Commit the transaction
@@ -354,7 +352,7 @@ conn = sqlite3.connect('prod_bestball_2024.db')
 cursor = conn.cursor()
 
 # Get data from players table
-cursor.execute("SELECT * FROM players")
+cursor.execute("SELECT * FROM players ORDER BY Rank")
 player_data = cursor.fetchall()
 
 # Get contests from contests
