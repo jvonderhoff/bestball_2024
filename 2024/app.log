@@ -1,21 +1,543 @@
-2024-07-11 12:56:16,595 - INFO - team_values data: MIN
-2024-07-11 12:56:16,595 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
-2024-07-11 12:56:16,596 - INFO - count_teams data: {'MIN': 1}
-2024-07-11 12:56:20,445 - INFO - team_values data: MIN
-2024-07-11 12:56:20,446 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
-2024-07-11 12:56:20,446 - INFO - count_teams data: {'MIN': 1, 'LA': 1}
-2024-07-11 12:56:20,447 - INFO - team_values data: LA
-2024-07-11 12:56:20,447 - INFO - values data: [1162128, 'Puka Nacua', 'WR', 'LA', 'ARI', 9, '9.1']
-2024-07-11 12:56:20,447 - INFO - count_teams data: {'MIN': 1, 'LA': 1}
-2024-07-11 12:56:22,079 - INFO - team_values data: MIN
-2024-07-11 12:56:22,079 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
-2024-07-11 12:56:22,079 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1}
-2024-07-11 12:56:22,080 - INFO - team_values data: LA
-2024-07-11 12:56:22,080 - INFO - values data: [1162128, 'Puka Nacua', 'WR', 'LA', 'ARI', 9, '9.1']
-2024-07-11 12:56:22,081 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1}
-2024-07-11 12:56:28,698 - INFO - team_values data: MIN
-2024-07-11 12:56:28,699 - INFO - values data: [1069535, 'Justin Jefferson', 'WR', 'MIN', 'GB', 5, '5.5']
-2024-07-11 12:56:28,699 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1, 'IND': 1}
-2024-07-11 12:56:28,700 - INFO - team_values data: LA
-2024-07-11 12:56:28,700 - INFO - values data: [1162128, 'Puka Nacua', 'WR', 'LA', 'ARI', 9, '9.1']
-2024-07-11 12:56:28,700 - INFO - count_teams data: {'MIN': 1, 'LA': 1, 'KC': 1, 'IND': 1}
+2024-08-10 16:59:34,453 - INFO - team_values data: PHI
+2024-08-10 16:59:34,453 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 16:59:34,453 - INFO - count_teams data: {'PHI': 1}
+2024-08-10 17:00:12,451 - INFO - team_values data: PHI
+2024-08-10 17:00:12,452 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:12,452 - INFO - count_teams data: {'PHI': 1, 'IND': 1}
+2024-08-10 17:00:12,453 - INFO - team_values data: IND
+2024-08-10 17:00:12,453 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:12,453 - INFO - count_teams data: {'PHI': 1, 'IND': 1}
+2024-08-10 17:00:22,000 - INFO - team_values data: PHI
+2024-08-10 17:00:22,001 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:22,002 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1}
+2024-08-10 17:00:22,003 - INFO - team_values data: IND
+2024-08-10 17:00:22,003 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:22,004 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1}
+2024-08-10 17:00:22,005 - INFO - team_values data: CHI
+2024-08-10 17:00:22,005 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:22,005 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1}
+2024-08-10 17:00:24,767 - INFO - team_values data: PHI
+2024-08-10 17:00:24,768 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:24,768 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 1}
+2024-08-10 17:00:24,769 - INFO - team_values data: IND
+2024-08-10 17:00:24,769 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:24,769 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 1}
+2024-08-10 17:00:24,770 - INFO - team_values data: CHI
+2024-08-10 17:00:24,770 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:24,770 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 1}
+2024-08-10 17:00:24,771 - INFO - team_values data: HOU
+2024-08-10 17:00:24,771 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:24,771 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 1}
+2024-08-10 17:00:30,931 - INFO - team_values data: PHI
+2024-08-10 17:00:30,932 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:30,932 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2}
+2024-08-10 17:00:30,933 - INFO - team_values data: IND
+2024-08-10 17:00:30,933 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:30,933 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2}
+2024-08-10 17:00:30,934 - INFO - team_values data: CHI
+2024-08-10 17:00:30,934 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:30,934 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2}
+2024-08-10 17:00:30,935 - INFO - team_values data: HOU
+2024-08-10 17:00:30,935 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:30,935 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2}
+2024-08-10 17:00:33,999 - INFO - team_values data: PHI
+2024-08-10 17:00:34,000 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:34,000 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 1}
+2024-08-10 17:00:34,001 - INFO - team_values data: IND
+2024-08-10 17:00:34,001 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:34,001 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 1}
+2024-08-10 17:00:34,002 - INFO - team_values data: CHI
+2024-08-10 17:00:34,002 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:34,002 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 1}
+2024-08-10 17:00:34,003 - INFO - team_values data: HOU
+2024-08-10 17:00:34,003 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:34,004 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 1}
+2024-08-10 17:00:34,005 - INFO - team_values data: SEA
+2024-08-10 17:00:34,005 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:00:34,006 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 1}
+2024-08-10 17:00:40,995 - INFO - team_values data: PHI
+2024-08-10 17:00:40,996 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:40,996 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2}
+2024-08-10 17:00:40,996 - INFO - team_values data: IND
+2024-08-10 17:00:40,996 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:40,996 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2}
+2024-08-10 17:00:40,997 - INFO - team_values data: CHI
+2024-08-10 17:00:40,997 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:40,997 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2}
+2024-08-10 17:00:40,997 - INFO - team_values data: HOU
+2024-08-10 17:00:40,997 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:40,997 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2}
+2024-08-10 17:00:40,998 - INFO - team_values data: SEA
+2024-08-10 17:00:40,998 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:00:40,998 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2}
+2024-08-10 17:00:40,999 - INFO - team_values data: SEA
+2024-08-10 17:00:40,999 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:00:40,999 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2}
+2024-08-10 17:00:44,195 - INFO - team_values data: PHI
+2024-08-10 17:00:44,195 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:44,195 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:44,196 - INFO - team_values data: IND
+2024-08-10 17:00:44,196 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:44,196 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:44,197 - INFO - team_values data: CHI
+2024-08-10 17:00:44,197 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:44,197 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:44,197 - INFO - team_values data: HOU
+2024-08-10 17:00:44,197 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:44,197 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:44,198 - INFO - team_values data: SEA
+2024-08-10 17:00:44,198 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:00:44,198 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:44,199 - INFO - team_values data: SEA
+2024-08-10 17:00:44,199 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:00:44,199 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:44,199 - INFO - team_values data: DAL
+2024-08-10 17:00:44,199 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:00:44,199 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1}
+2024-08-10 17:00:48,998 - INFO - team_values data: PHI
+2024-08-10 17:00:48,998 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:48,999 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,000 - INFO - team_values data: IND
+2024-08-10 17:00:49,000 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:49,000 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,001 - INFO - team_values data: CHI
+2024-08-10 17:00:49,001 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:49,001 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,002 - INFO - team_values data: HOU
+2024-08-10 17:00:49,002 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:49,002 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,004 - INFO - team_values data: SEA
+2024-08-10 17:00:49,004 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:00:49,004 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,005 - INFO - team_values data: SEA
+2024-08-10 17:00:49,005 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:00:49,005 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,006 - INFO - team_values data: DAL
+2024-08-10 17:00:49,006 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:00:49,006 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:49,007 - INFO - team_values data: CLE
+2024-08-10 17:00:49,007 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:00:49,007 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1}
+2024-08-10 17:00:59,212 - INFO - team_values data: PHI
+2024-08-10 17:00:59,213 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:00:59,213 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,214 - INFO - team_values data: IND
+2024-08-10 17:00:59,214 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:00:59,214 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,215 - INFO - team_values data: CHI
+2024-08-10 17:00:59,215 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:00:59,216 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,216 - INFO - team_values data: HOU
+2024-08-10 17:00:59,216 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:00:59,217 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,218 - INFO - team_values data: SEA
+2024-08-10 17:00:59,218 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:00:59,218 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,219 - INFO - team_values data: SEA
+2024-08-10 17:00:59,219 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:00:59,219 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,220 - INFO - team_values data: DAL
+2024-08-10 17:00:59,220 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:00:59,220 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,221 - INFO - team_values data: CLE
+2024-08-10 17:00:59,221 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:00:59,221 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:00:59,222 - INFO - team_values data: NYG
+2024-08-10 17:00:59,222 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:00:59,222 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1}
+2024-08-10 17:01:01,629 - INFO - team_values data: PHI
+2024-08-10 17:01:01,630 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:01:01,630 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,631 - INFO - team_values data: IND
+2024-08-10 17:01:01,631 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:01:01,631 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,632 - INFO - team_values data: CHI
+2024-08-10 17:01:01,632 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:01:01,632 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,633 - INFO - team_values data: HOU
+2024-08-10 17:01:01,634 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:01:01,634 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,635 - INFO - team_values data: SEA
+2024-08-10 17:01:01,635 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:01:01,636 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,636 - INFO - team_values data: SEA
+2024-08-10 17:01:01,637 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:01:01,637 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,637 - INFO - team_values data: DAL
+2024-08-10 17:01:01,638 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:01:01,638 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,638 - INFO - team_values data: CLE
+2024-08-10 17:01:01,639 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:01:01,639 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,639 - INFO - team_values data: NYG
+2024-08-10 17:01:01,640 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:01:01,640 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:01,640 - INFO - team_values data: NO
+2024-08-10 17:01:01,641 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:01:01,641 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1}
+2024-08-10 17:01:08,130 - INFO - team_values data: PHI
+2024-08-10 17:01:08,131 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:01:08,131 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,133 - INFO - team_values data: IND
+2024-08-10 17:01:08,133 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:01:08,133 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,135 - INFO - team_values data: CHI
+2024-08-10 17:01:08,135 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:01:08,135 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,136 - INFO - team_values data: HOU
+2024-08-10 17:01:08,137 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:01:08,137 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,138 - INFO - team_values data: SEA
+2024-08-10 17:01:08,138 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:01:08,139 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,139 - INFO - team_values data: SEA
+2024-08-10 17:01:08,140 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:01:08,140 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,141 - INFO - team_values data: DAL
+2024-08-10 17:01:08,141 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:01:08,141 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,142 - INFO - team_values data: CLE
+2024-08-10 17:01:08,142 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:01:08,142 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,143 - INFO - team_values data: NYG
+2024-08-10 17:01:08,143 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:01:08,143 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:08,144 - INFO - team_values data: NO
+2024-08-10 17:01:08,144 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:01:08,144 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 1, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,279 - INFO - team_values data: PHI
+2024-08-10 17:01:32,280 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:01:32,280 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,282 - INFO - team_values data: IND
+2024-08-10 17:01:32,282 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:01:32,282 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,283 - INFO - team_values data: CHI
+2024-08-10 17:01:32,283 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:01:32,284 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,285 - INFO - team_values data: HOU
+2024-08-10 17:01:32,285 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:01:32,285 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,286 - INFO - team_values data: SEA
+2024-08-10 17:01:32,287 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:01:32,287 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,288 - INFO - team_values data: SEA
+2024-08-10 17:01:32,288 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:01:32,288 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,289 - INFO - team_values data: DAL
+2024-08-10 17:01:32,289 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:01:32,289 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,290 - INFO - team_values data: CLE
+2024-08-10 17:01:32,290 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:01:32,290 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,291 - INFO - team_values data: NYG
+2024-08-10 17:01:32,291 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:01:32,291 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,292 - INFO - team_values data: NO
+2024-08-10 17:01:32,292 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:01:32,292 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:32,294 - INFO - team_values data: CLE
+2024-08-10 17:01:32,294 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:01:32,294 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1}
+2024-08-10 17:01:41,912 - INFO - team_values data: PHI
+2024-08-10 17:01:41,913 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:01:41,913 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,914 - INFO - team_values data: IND
+2024-08-10 17:01:41,915 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:01:41,915 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,916 - INFO - team_values data: CHI
+2024-08-10 17:01:41,916 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:01:41,916 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,917 - INFO - team_values data: HOU
+2024-08-10 17:01:41,917 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:01:41,917 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,919 - INFO - team_values data: SEA
+2024-08-10 17:01:41,919 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:01:41,919 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,920 - INFO - team_values data: SEA
+2024-08-10 17:01:41,920 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:01:41,920 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,921 - INFO - team_values data: DAL
+2024-08-10 17:01:41,921 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:01:41,922 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,922 - INFO - team_values data: CLE
+2024-08-10 17:01:41,923 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:01:41,923 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,923 - INFO - team_values data: NYG
+2024-08-10 17:01:41,924 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:01:41,924 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,924 - INFO - team_values data: NO
+2024-08-10 17:01:41,925 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:01:41,925 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,926 - INFO - team_values data: CLE
+2024-08-10 17:01:41,926 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:01:41,926 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:41,927 - INFO - team_values data: MIA
+2024-08-10 17:01:41,927 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:01:41,927 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1}
+2024-08-10 17:01:45,259 - INFO - team_values data: PHI
+2024-08-10 17:01:45,260 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:01:45,260 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,261 - INFO - team_values data: IND
+2024-08-10 17:01:45,261 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:01:45,261 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,262 - INFO - team_values data: CHI
+2024-08-10 17:01:45,262 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:01:45,262 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,263 - INFO - team_values data: HOU
+2024-08-10 17:01:45,263 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:01:45,264 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,265 - INFO - team_values data: SEA
+2024-08-10 17:01:45,265 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:01:45,265 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,266 - INFO - team_values data: SEA
+2024-08-10 17:01:45,266 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:01:45,266 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,267 - INFO - team_values data: DAL
+2024-08-10 17:01:45,267 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:01:45,268 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,268 - INFO - team_values data: CLE
+2024-08-10 17:01:45,268 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:01:45,269 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,269 - INFO - team_values data: NYG
+2024-08-10 17:01:45,269 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:01:45,270 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,270 - INFO - team_values data: NO
+2024-08-10 17:01:45,270 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:01:45,271 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,272 - INFO - team_values data: CLE
+2024-08-10 17:01:45,272 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:01:45,272 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,273 - INFO - team_values data: MIA
+2024-08-10 17:01:45,273 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:01:45,273 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:01:45,273 - INFO - team_values data: NE
+2024-08-10 17:01:45,273 - INFO - values data: [1107826, 'Antonio Gibson', 'RB', 'NE', 'LAC', 155, '169.8']
+2024-08-10 17:01:45,274 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 1}
+2024-08-10 17:02:00,026 - INFO - team_values data: PHI
+2024-08-10 17:02:00,026 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:02:00,026 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,027 - INFO - team_values data: IND
+2024-08-10 17:02:00,027 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:02:00,027 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,028 - INFO - team_values data: CHI
+2024-08-10 17:02:00,028 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:02:00,028 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,028 - INFO - team_values data: HOU
+2024-08-10 17:02:00,028 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:02:00,028 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,029 - INFO - team_values data: SEA
+2024-08-10 17:02:00,029 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:02:00,030 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,030 - INFO - team_values data: SEA
+2024-08-10 17:02:00,030 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:02:00,030 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,031 - INFO - team_values data: DAL
+2024-08-10 17:02:00,031 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:02:00,031 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,032 - INFO - team_values data: CLE
+2024-08-10 17:02:00,032 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:02:00,032 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,032 - INFO - team_values data: NYG
+2024-08-10 17:02:00,032 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:02:00,032 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,033 - INFO - team_values data: NO
+2024-08-10 17:02:00,033 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:02:00,033 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,034 - INFO - team_values data: CLE
+2024-08-10 17:02:00,034 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:02:00,034 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,035 - INFO - team_values data: MIA
+2024-08-10 17:02:00,035 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:02:00,035 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,035 - INFO - team_values data: NE
+2024-08-10 17:02:00,035 - INFO - values data: [1107826, 'Antonio Gibson', 'RB', 'NE', 'LAC', 155, '169.8']
+2024-08-10 17:02:00,035 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:00,036 - INFO - team_values data: NE
+2024-08-10 17:02:00,036 - INFO - values data: [1175693, 'Demario Douglas', 'WR', 'NE', 'LAC', 154, '175.2']
+2024-08-10 17:02:00,036 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2}
+2024-08-10 17:02:36,222 - INFO - team_values data: PHI
+2024-08-10 17:02:36,222 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:02:36,222 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,223 - INFO - team_values data: IND
+2024-08-10 17:02:36,223 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:02:36,224 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,225 - INFO - team_values data: CHI
+2024-08-10 17:02:36,225 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:02:36,225 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,226 - INFO - team_values data: HOU
+2024-08-10 17:02:36,226 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:02:36,226 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,228 - INFO - team_values data: SEA
+2024-08-10 17:02:36,228 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:02:36,228 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,229 - INFO - team_values data: SEA
+2024-08-10 17:02:36,229 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:02:36,229 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,230 - INFO - team_values data: DAL
+2024-08-10 17:02:36,230 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:02:36,230 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,231 - INFO - team_values data: CLE
+2024-08-10 17:02:36,231 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:02:36,231 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,232 - INFO - team_values data: NYG
+2024-08-10 17:02:36,232 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:02:36,232 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,233 - INFO - team_values data: NO
+2024-08-10 17:02:36,233 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:02:36,233 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,235 - INFO - team_values data: CLE
+2024-08-10 17:02:36,235 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:02:36,235 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,235 - INFO - team_values data: MIA
+2024-08-10 17:02:36,235 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:02:36,236 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,236 - INFO - team_values data: NE
+2024-08-10 17:02:36,236 - INFO - values data: [1107826, 'Antonio Gibson', 'RB', 'NE', 'LAC', 155, '169.8']
+2024-08-10 17:02:36,236 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:02:36,237 - INFO - team_values data: NE
+2024-08-10 17:02:36,237 - INFO - values data: [1175693, 'Demario Douglas', 'WR', 'NE', 'LAC', 154, '175.2']
+2024-08-10 17:02:36,237 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1}
+2024-08-10 17:03:53,581 - INFO - team_values data: PHI
+2024-08-10 17:03:53,584 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:03:53,584 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,585 - INFO - team_values data: IND
+2024-08-10 17:03:53,586 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:03:53,586 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,587 - INFO - team_values data: CHI
+2024-08-10 17:03:53,587 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:03:53,587 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,588 - INFO - team_values data: HOU
+2024-08-10 17:03:53,588 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:03:53,589 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,590 - INFO - team_values data: SEA
+2024-08-10 17:03:53,590 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:03:53,590 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,591 - INFO - team_values data: SEA
+2024-08-10 17:03:53,592 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:03:53,592 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,593 - INFO - team_values data: DAL
+2024-08-10 17:03:53,593 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:03:53,593 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,594 - INFO - team_values data: CLE
+2024-08-10 17:03:53,594 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:03:53,594 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,595 - INFO - team_values data: NYG
+2024-08-10 17:03:53,595 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:03:53,595 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,596 - INFO - team_values data: NO
+2024-08-10 17:03:53,596 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:03:53,596 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,597 - INFO - team_values data: CLE
+2024-08-10 17:03:53,598 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:03:53,598 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,598 - INFO - team_values data: MIA
+2024-08-10 17:03:53,599 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:03:53,599 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,599 - INFO - team_values data: NE
+2024-08-10 17:03:53,599 - INFO - values data: [1107826, 'Antonio Gibson', 'RB', 'NE', 'LAC', 155, '169.8']
+2024-08-10 17:03:53,600 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,600 - INFO - team_values data: NE
+2024-08-10 17:03:53,600 - INFO - values data: [1175693, 'Demario Douglas', 'WR', 'NE', 'LAC', 154, '175.2']
+2024-08-10 17:03:53,600 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:03:53,601 - INFO - team_values data: BAL
+2024-08-10 17:03:53,602 - INFO - values data: [923109, 'Justice Hill', 'RB', 'BAL', 'HOU', 264]
+2024-08-10 17:03:53,602 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 1, 'BAL': 1}
+2024-08-10 17:05:07,975 - INFO - team_values data: PHI
+2024-08-10 17:05:07,976 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:05:07,976 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,978 - INFO - team_values data: IND
+2024-08-10 17:05:07,978 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:05:07,978 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,979 - INFO - team_values data: CHI
+2024-08-10 17:05:07,979 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:05:07,979 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,980 - INFO - team_values data: HOU
+2024-08-10 17:05:07,980 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:05:07,980 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,982 - INFO - team_values data: SEA
+2024-08-10 17:05:07,982 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:05:07,982 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,983 - INFO - team_values data: SEA
+2024-08-10 17:05:07,983 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:05:07,983 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,984 - INFO - team_values data: DAL
+2024-08-10 17:05:07,984 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:05:07,984 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,985 - INFO - team_values data: CLE
+2024-08-10 17:05:07,985 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:05:07,985 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,986 - INFO - team_values data: NYG
+2024-08-10 17:05:07,986 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:05:07,986 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,987 - INFO - team_values data: NO
+2024-08-10 17:05:07,987 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:05:07,987 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,989 - INFO - team_values data: CLE
+2024-08-10 17:05:07,989 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:05:07,989 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,989 - INFO - team_values data: MIA
+2024-08-10 17:05:07,989 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:05:07,990 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,990 - INFO - team_values data: NE
+2024-08-10 17:05:07,990 - INFO - values data: [1107826, 'Antonio Gibson', 'RB', 'NE', 'LAC', 155, '169.8']
+2024-08-10 17:05:07,990 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,991 - INFO - team_values data: NE
+2024-08-10 17:05:07,991 - INFO - values data: [1175693, 'Demario Douglas', 'WR', 'NE', 'LAC', 154, '175.2']
+2024-08-10 17:05:07,991 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,992 - INFO - team_values data: BAL
+2024-08-10 17:05:07,992 - INFO - values data: [923109, 'Justice Hill', 'RB', 'BAL', 'HOU', 264]
+2024-08-10 17:05:07,992 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:07,993 - INFO - team_values data: MIN
+2024-08-10 17:05:07,993 - INFO - values data: [1126817, 'Jalen Nailor', 'WR', 'MIN', 'GB', 265]
+2024-08-10 17:05:07,993 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 2, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,708 - INFO - team_values data: PHI
+2024-08-10 17:05:12,708 - INFO - values data: [944826, 'A.J. Brown', 'WR', 'PHI', 'DAL', 9, '9.9']
+2024-08-10 17:05:12,708 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,709 - INFO - team_values data: IND
+2024-08-10 17:05:12,709 - INFO - values data: [1065406, 'Jonathan Taylor', 'RB', 'IND', 'NYG', 15, '15.3']
+2024-08-10 17:05:12,710 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,711 - INFO - team_values data: CHI
+2024-08-10 17:05:12,711 - INFO - values data: [877790, 'DJ Moore', 'WR', 'CHI', 'SEA', 34, '35.5']
+2024-08-10 17:05:12,711 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,712 - INFO - team_values data: HOU
+2024-08-10 17:05:12,712 - INFO - values data: [1128222, 'Tank Dell', 'WR', 'HOU', 'BAL', 37, '44.5']
+2024-08-10 17:05:12,712 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,714 - INFO - team_values data: SEA
+2024-08-10 17:05:12,714 - INFO - values data: [1164402, 'Kenneth Walker III', 'RB', 'SEA', 'CHI', 68, '64.2']
+2024-08-10 17:05:12,714 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,715 - INFO - team_values data: SEA
+2024-08-10 17:05:12,715 - INFO - values data: [1214087, 'Jaxon Smith-Njigba', 'WR', 'SEA', 'CHI', 85, '91.6']
+2024-08-10 17:05:12,715 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,716 - INFO - team_values data: DAL
+2024-08-10 17:05:12,716 - INFO - values data: [1065361, 'Jake Ferguson', 'TE', 'DAL', 'PHI', 88, '82.5']
+2024-08-10 17:05:12,716 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,717 - INFO - team_values data: CLE
+2024-08-10 17:05:12,717 - INFO - values data: [832098, 'David Njoku', 'TE', 'CLE', 'MIA', 100, '92.7']
+2024-08-10 17:05:12,717 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,718 - INFO - team_values data: NYG
+2024-08-10 17:05:12,718 - INFO - values data: [916466, 'Devin Singletary', 'RB', 'NYG', 'IND', 107, '109.1']
+2024-08-10 17:05:12,718 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,719 - INFO - team_values data: NO
+2024-08-10 17:05:12,719 - INFO - values data: [923412, 'Rashid Shaheed', 'WR', 'NO', 'LV', 114, '119.3']
+2024-08-10 17:05:12,719 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,720 - INFO - team_values data: CLE
+2024-08-10 17:05:12,721 - INFO - values data: [973935, 'Jerry Jeudy', 'WR', 'CLE', 'MIA', 120, '134.1']
+2024-08-10 17:05:12,721 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,721 - INFO - team_values data: MIA
+2024-08-10 17:05:12,721 - INFO - values data: [1286513, 'Jaylen Wright', 'RB', 'MIA', 'CLE', 150, '166.7']
+2024-08-10 17:05:12,721 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,722 - INFO - team_values data: NE
+2024-08-10 17:05:12,722 - INFO - values data: [1107826, 'Antonio Gibson', 'RB', 'NE', 'LAC', 155, '169.8']
+2024-08-10 17:05:12,722 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,723 - INFO - team_values data: NE
+2024-08-10 17:05:12,723 - INFO - values data: [1175693, 'Demario Douglas', 'WR', 'NE', 'LAC', 154, '175.2']
+2024-08-10 17:05:12,723 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,724 - INFO - team_values data: BAL
+2024-08-10 17:05:12,724 - INFO - values data: [923109, 'Justice Hill', 'RB', 'BAL', 'HOU', 264]
+2024-08-10 17:05:12,724 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,725 - INFO - team_values data: MIN
+2024-08-10 17:05:12,725 - INFO - values data: [1126817, 'Jalen Nailor', 'WR', 'MIN', 'GB', 265]
+2024-08-10 17:05:12,725 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
+2024-08-10 17:05:12,726 - INFO - team_values data: SEA
+2024-08-10 17:05:12,726 - INFO - values data: [837806, 'Will Dissly', 'TE', 'SEA', 'CHI', 237]
+2024-08-10 17:05:12,726 - INFO - count_teams data: {'PHI': 1, 'IND': 1, 'CHI': 1, 'HOU': 2, 'SEA': 3, 'DAL': 1, 'CLE': 2, 'NYG': 1, 'NO': 1, 'LAC': 1, 'MIA': 1, 'NE': 2, 'MIN': 2, 'BAL': 1}
