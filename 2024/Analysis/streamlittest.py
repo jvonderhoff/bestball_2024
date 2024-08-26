@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Establish a connection to the SQLite database
 conn = sqlite3.connect('/Users/jvonderhoff/Desktop/FantasyFootball/2024/prod_bestball_2024.db')
 
 # Define SQL queries to get player rankings and player frequencies in lineups
-query_players = "SELECT Name, Rank, Team FROM players ORDER BY Rank"
+query_players = "SELECT Name, Rank, Team, Position FROM players ORDER BY Rank"
 query_lineups = "SELECT DISTINCT lineup_ID, player_name, player_team FROM DK_lineups"
 
 # Read data from the SQL queries into DataFrames
@@ -46,16 +47,25 @@ def color_percentage(val):
 # Apply color based on percentage
 styled_player_ranking = player_ranking.style.applymap(color_percentage, subset=['Percentage'])
 
-# Tabs for Player Selection and Player Table
-tabs = st.radio("View", ["Main Page", "Player Selection", "Player Stacking"])
+# Streamlit code for adding interactivity
+tabs = st.sidebar.radio("View", ["Exposure", "Player Selection", "Player Stacking", "Drafts"])
 
-if tabs == "Main Page":
+if tabs == "Exposure":
+    # Create filter widgets for teams and positions
+    selected_teams = st.multiselect('Select Teams', df_players_ranked['Team'].unique())
+    selected_positions = st.multiselect('Select Positions', df_players_ranked['Position'].unique())
 
-    # Main Page
-    st.write('## Exposure')
-
-    # Display the styled player ranking
-    st.write(styled_player_ranking)
+    if selected_teams or selected_positions:
+        filtered_data = player_ranking
+        if selected_teams:
+            filtered_data = filtered_data[filtered_data['Team'].isin(selected_teams)]
+        if selected_positions:
+            filtered_data = filtered_data[filtered_data['Position'].isin(selected_positions)]
+        
+        # Display the filtered data
+        st.write(filtered_data.style.applymap(color_percentage, subset=['Percentage']))
+    else:
+        st.write(styled_player_ranking)
     
 elif tabs == "Player Selection":
     st.write('## Player Selection Page')
@@ -93,3 +103,40 @@ elif tabs == "Player Stacking":
         st.write(lineup_players_same_team)
 
     st.write("*Note: The above list shows players on the same team as the selected player in each lineup.*")
+
+elif tabs == "Drafts":
+# SQLite query to fetch lineup data
+    query = """
+    SELECT QB_count, RB_count, WR_count, TE_count, COUNT(*) AS lineup_count
+    FROM (
+        SELECT lineup_ID,
+            SUM(CASE WHEN player_position = 'QB' THEN 1 ELSE 0 END) AS QB_count,
+            SUM(CASE WHEN player_position = 'RB' THEN 1 ELSE 0 END) AS RB_count,
+            SUM(CASE WHEN player_position = 'WR' THEN 1 ELSE 0 END) AS WR_count,
+            SUM(CASE WHEN player_position = 'TE' THEN 1 ELSE 0 END) AS TE_count
+        FROM DK_lineups
+        GROUP BY lineup_ID
+    )
+    GROUP BY QB_count, RB_count, WR_count, TE_count
+    ORDER BY lineup_count DESC;
+    """
+
+    # Execute the query and fetch data into a DataFrame
+    lineup_data = pd.read_sql_query(query, conn)
+
+    # Close the database connection
+    conn.close()
+
+    # Update the DataFrame to show individual position counts as x-axis labels
+    lineup_data['Position_Counts'] = lineup_data.apply(lambda x: f"QB:{x['QB_count']} | RB:{x['RB_count']} | WR:{x['WR_count']} | TE:{x['TE_count']}", axis=1)
+
+    # Creating a bar chart using Matplotlib
+    fig, ax = plt.subplots()
+    ax.bar(range(len(lineup_data)), lineup_data['lineup_count'])
+    ax.set_xticks(range(len(lineup_data)))
+    ax.set_xticklabels(lineup_data['Position_Counts'], rotation=45, ha='right')
+
+    # Streamlit app
+    st.title('Lineup Compositions Analysis')
+    st.pyplot(fig)
+    st.dataframe(lineup_data)  # Display the data table as well

@@ -62,7 +62,7 @@ def update_labels():
 
             # Insert player data into the Treeview
             for player in players:
-                players_treeview.insert("", "end", values=player)
+                players_treeview.insert("", "end", values=player)   
             
             
                     
